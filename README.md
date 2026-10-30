@@ -66,8 +66,6 @@ The report investigates these nine questions:
 | **Duration and viewership vary nonlinearly** | The scatter/line display covers courses with durations up to roughly **800 hours** | Check long-course outliers and metric aggregation before making a duration recommendation. |
 | **Skills coverage varies by sub-category** | Business table shows an average count of **3.76** skills provided in its total row | The table is filtered to Business in the displayed view; do not generalize this figure to every category. |
 
-These observations come from the uploaded PDF. The dashboard screenshot contains some ambiguous labels and partially truncated category names, so conclusions should remain limited to what can be read and reproduced.
-
 ## Power BI Report & Methodology
 
 The `.pbix` report metadata shows **one page with 12 visual containers**, including a category slicer, sub-category slicer, course-type bar chart, language/sub-category column chart, language pie chart, category ranking matrix, subtitle-count line chart, instructor-rating column chart, duration-versus-views line chart and skills/duration matrix.
