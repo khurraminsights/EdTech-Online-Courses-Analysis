@@ -36,7 +36,7 @@ I developed an **EdTech Online Courses Analysis** report in Power BI to explore 
 
 ## Dashboard Preview
 
-![Original Power BI report screenshot](assets/original-dashboard.png)
+<img width="1448" height="1086" alt="EdTech Online Courses Dashboard" src="https://github.com/user-attachments/assets/9ef5d9de-c2ac-400d-ad68-da255d58b78e" />
 
 *Actual screenshot rendered from the provided Power BI dashboard PDF. This is the evidence-backed reference for values and charts.*
 
