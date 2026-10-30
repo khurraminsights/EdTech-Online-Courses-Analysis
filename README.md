@@ -1,192 +1,156 @@
-# EdTech-Online-Courses-Analysis
-This project analyzes an EdTech platform's course data to uncover trends and insights. The analysis is based on a Power BI dashboard and addresses key business questions to help the client make data-driven decisions.
+<div align="center">
 
-[Power BI Project Dashboard.pdf](https://github.com/user-attachments/files/18584344/Power.BI.Project.Dashboard.pdf)
+# EdTech Online Courses Analysis
+### Power BI Portfolio Project | Course Catalog, Languages & Learner Engagement
 
-![schema](https://github.com/user-attachments/assets/b8fee576-58dd-40b8-8563-fcc52b6ff6a7)
+<img width="2244" height="701" alt="EdTech Courses Analysis Banner" src="https://github.com/user-attachments/assets/8ca739b5-dbb5-4d86-950f-1b5bc6ab2051" />
 
-## Key Questions Addressed
-1. Distribution of course types across categories.
-2. Average number of views by category, sub-category, and language.
-3. Most commonly taught skills in today's educational landscape.
-4. Distribution of languages in which courses are created.
-5. Language preferences for each category.
-6. Impact of subtitles on viewer engagement.
-7. Top instructors by category and sub-category.
-8. Relationship between course duration and views.
-9. Impact of skill variety on viewership.
 
-## 1. Distribution of Course Types Across Categories
+![Power BI](https://img.shields.io/badge/Power_BI-Data_Visualization-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![Analytics](https://img.shields.io/badge/Analytics-Course_Performance-722B8E?style=for-the-badge)
+![Data](https://img.shields.io/badge/Insights-Education_Data-D94189?style=for-the-badge)
 
-![bar chart](https://github.com/user-attachments/assets/4f9f636b-b2e0-4603-9bf0-4b8a7b2468fc)
+**An interactive Power BI report exploring course formats, teaching languages, average views, subtitles, duration, instructor ratings and skills across an online-course catalog.**
 
-- **Type:** Bar Chart
-- **Description:** The bar chart shows the distribution of course types: Courses, Specializations, and Professional Certificates and courses dominate with 746 instances, followed by 
-                   specializations (132) and Professional Certificates (fewer in number).
+[Dashboard](#dashboard-preview) · [Questions](#business-questions) · [Findings](#findings-visible-in-the-report) · [Method](#power-bi-report--methodology) · [Limitations](#data-interpretation--quality-checks)
 
-- **Insight:**
-  - Courses are the most popular format across all categories, indicating learners prefer shorter, more focused content.
-  - **Insight:** Specializations and Professional Certificates are less common but may appeal to learners seeking in-depth knowledge or career advancement.
- 
-- **Recommendation:**
+</div>
 
-  - Focus on launching Courses in high-demand categories like Business, Data Science, and Information Technology.
+> **Independent project:** This is an educational data analytics portfolio project. Findings below describe the attached Power BI report and should not be interpreted as verified platform-wide performance. The banner is a design illustration; the dashboard screenshot is from the uploaded project PDF.
 
-  - For Professional Certificates, target categories like Business and IT, where career-oriented learners are more likely to enroll.
+## Executive Summary
 
-## 2. Average Number of Views by Category, Sub-Category, and Language
+Online education platforms contain courses across many subjects, formats, teaching languages and skill levels. Understanding that catalog requires more than counting courses: analysts also need to compare potential learner interest, instructor ratings and engagement-related attributes.
 
-![table 1](https://github.com/user-attachments/assets/2ce072b2-6a07-40d7-98da-c61fe3c615af)
+I developed an **EdTech Online Courses Analysis** report in Power BI to explore these relationships through interactive category and sub-category filters, charts and summary tables. The report helps frame questions about **course supply, language availability, views, subtitle support, course length and skills coverage**.
 
-- **The table ranks categories by average views. For example:**
+| Project detail | Description |
+|---|---|
+| **Role** | Data Analyst — portfolio case study |
+| **Primary tool** | Power BI Desktop |
+| **Source artifacts** | `.pbix` report and PDF dashboard export |
+| **Report pages inspected** | 1 |
+| **Main dataset references** | `Online_Courses`, `Instructors` (visible in PBIX report metadata) |
+| **Main interactive filters** | Category, Sub-Category |
+| **Analysis areas** | Course type, language, average views, subtitles, duration, ratings, skills |
 
-  - Business has the highest average views, followed by Data Science and Information Technology.
+## Dashboard Preview
 
-  - Languages like English and Chinese (Simplified) dominate in terms of views.
+![Original Power BI report screenshot](assets/original-dashboard.png)
 
-- **Insights:**
+*Actual screenshot rendered from the provided Power BI dashboard PDF. This is the evidence-backed reference for values and charts.*
 
-  - Business and Data Science categories have the highest engagement, indicating strong learner interest.
+## Business Questions
 
-  - English courses consistently receive the most views, followed by Chinese (Simplified) and Spanish.
+The report investigates these nine questions:
 
-- **Recommendation:**
+1. **Course formats:** Which formats (Course, Specialization, Project, Professional Certificate) are most common?
+2. **Category performance:** How do views vary by category and sub-category?
+3. **Skills:** How many skills are associated with different course categories?
+4. **Language availability:** Which teaching languages are represented in the catalog?
+5. **Subtitles:** How does average viewership vary with the number of subtitle languages?
+6. **Instructors:** Which displayed instructors have the highest ratings?
+7. **Duration:** How does course duration relate to the average number of views?
+8. **Sub-category comparison:** How do subject areas differ in course attributes and engagement?
+9. **Catalog positioning:** Which underrepresented formats or language segments might merit further research?
 
-  - Prioritize content creation in English for Business and Data Science categories.
+## Findings Visible in the Report
 
-  - Consider expanding Chinese (Simplified) and Spanish content to tap into growing markets.
+| Finding | What the dashboard shows | Interpretation / caveat |
+|---|---|---|
+| **Courses dominate the format mix** | **746** entries labeled `Course` versus **132** `Specialization` entries | These are catalog counts, not enrollment or revenue measures. |
+| **English is the dominant teaching language** | Pie chart shows **845 (95.91%)** for the leading language and **23 (2.61%)** for the next displayed slice | The chart legend indicates English is dominant; remaining slices and denominators should be checked before claiming a complete language breakdown. |
+| **Average views vary by language** | The table includes approximately **2,092** for Portuguese (Brazilian), **1,637** for Spanish and **102** for Chinese (Simplified) | These are report values for the selected context, not evidence that language alone causes engagement. |
+| **Some highly rated instructors cluster near the ceiling** | Several displayed instructor ratings read **4.9** | A rating chart alone does not establish statistical significance or course quality. |
+| **Subtitle-language count and views are plotted together** | The chart increases sharply at some higher subtitle counts, with a point labeled around **38K** | Outliers and sample sizes need review; this is not proof that adding subtitles causes more views. |
+| **Duration and viewership vary nonlinearly** | The scatter/line display covers courses with durations up to roughly **800 hours** | Check long-course outliers and metric aggregation before making a duration recommendation. |
+| **Skills coverage varies by sub-category** | Business table shows an average count of **3.76** skills provided in its total row | The table is filtered to Business in the displayed view; do not generalize this figure to every category. |
 
-## 3. Most Commonly Taught Skills
+These observations come from the uploaded PDF. The dashboard screenshot contains some ambiguous labels and partially truncated category names, so conclusions should remain limited to what can be read and reproduced.
 
-![table2](https://github.com/user-attachments/assets/5ea80b3a-cfcf-4bd1-877e-59ac5136ea3f)
+## Power BI Report & Methodology
 
-- **The table lists the average number of skills provided per category:**
+The `.pbix` report metadata shows **one page with 12 visual containers**, including a category slicer, sub-category slicer, course-type bar chart, language/sub-category column chart, language pie chart, category ranking matrix, subtitle-count line chart, instructor-rating column chart, duration-versus-views line chart and skills/duration matrix.
 
-   - Marketing has the highest average skills (4.58), followed by Finance (3.88) and Business Essentials (3.82).
+### Analytical workflow
 
-   - Entrepreneurship has the lowest average skills (2.54).
+```text
+Online course & instructor records
+           |
+    Power BI data model
+           |
+     Category filters
+           |
+  +--------+---------+---------+
+  |        |         |         |
+Formats Languages  Viewership  Instructors
+  |        |         |         |
+  +--------+---------+---------+
+           |
+   Interactive dashboard
+           |
+    Questions & insights
+```
 
-- **Insights:**
-  
-  - Marketing and Finance courses are skill-intensive, aligning with job market demands.
+### Measures and aggregations
 
-  - Entrepreneurship courses may need to incorporate more skills to remain competitive.
+The report visual metadata references aggregations such as `COUNT` of course identifiers, `SUM` or averages of views, and instructor-rating measures. Before treating the results as production KPIs, the specific measure definitions and filter contexts should be documented in the `.pbix` file.
 
-- **Recommendation:**
-  
-  - Focus on Marketing and Finance courses, as they align with current job market trends.
+## Business Recommendations
 
-  - Enhance Entrepreneurship courses by adding more practical skills.
+| Opportunity | Recommended investigation | Success criterion |
+|---|---|---|
+| **Course portfolio mix** | Compare completion, enrollment and profitability across formats instead of counting supply alone | Enrollment and completion by course type |
+| **Language localization** | Examine underserved language segments and course demand | Qualified demand and engagement by language |
+| **Subtitle accessibility** | Test whether expanded subtitle support improves access after controlling for course popularity | Controlled engagement and completion measures |
+| **Instructor experience** | Pair instructor ratings with review counts and course-level outcomes | Rating reliability and learner outcomes |
+| **Course length** | Separate short and extended courses; investigate outliers | Completion and watch time by duration band |
+| **Skills coverage** | Compare skills offered against measured learner demand | Skill relevance and enrollment conversion |
 
-## 4. Distribution of Languages
+*These are proposed analyses, not measured improvements from the current report.*
 
-![pie chart](https://github.com/user-attachments/assets/be06872b-3837-41b3-b0ad-eed81a896456)
+## Data Interpretation & Quality Checks
 
-- **The pie chart shows the distribution of languages:**
-  
-  - English dominates with 95.91% of courses.
+The following checks would improve reproducibility before external publication:
 
-  - Other languages like Spanish, Chinese (Simplified), and French make up the remaining 4.09%.
+- [ ] Confirm total number of course records and de-duplicate course IDs.
+- [ ] Inspect the category slicer for the `(Blank)` value and determine its source.
+- [ ] Verify whether reported `Number of viewers` represents unique viewers, total views or an imported numeric field.
+- [ ] Validate chart titles: count, average and sum are different metrics.
+- [ ] Inspect the unusually long-duration records and high subtitle-count outliers.
+- [ ] Reconcile language counts with the pie chart's percentages and total denominator.
+- [ ] Check instructor-rating sample sizes.
+- [ ] Document the source dataset, refresh date and Power Query transformations.
+- [ ] Add verified measure definitions and validated screenshots from Power BI Desktop.
 
-- **Insights:**
-  
-  - English is the primary language for course creation, reflecting its global appeal.
+## Visual Design
 
-  - Other languages have limited representation, indicating potential growth opportunities.
+The supplied report uses a dark maroon and light-pink theme. A refreshed visual direction can use **navy, plum, rose and white** with clearer hierarchy, more room for category labels, fewer decorative elements and explicit metric units.
 
- - **Recommendation:**
+**Important:** AI-rendered mockups are *design concepts only*. They must not replace the original dashboard as quantitative evidence unless values and labels are rebuilt from the actual model.
 
-  - Expand course offerings in Spanish, Chinese (Simplified), and French to cater to non-English-speaking audiences.
+## Repository Files
 
-## 5. Language Preferences by Category
+```text
+EdTech-Online-Courses-Analysis/
+├── README.md
+├── assets/
+│   ├── edtech-banner.png
+│   └── original-dashboard.png
+├── EdTech Online Courses Analysis.pbix   # add original file if desired
+└── Power BI Project Dashboard.pdf        # add original export if desired
+```
 
-![5 bar chart](https://github.com/user-attachments/assets/cc6d6f75-b7af-4ba6-a307-f170d7b3f0a8)
+The last two entries are suggested filenames; keep the real filenames when uploading the source files. GitHub's normal preview cannot interact with `.pbix` reports, so include screenshots and clear reproduction notes.
 
-- **The bar chart shows language preferences across categories:**
+## About the Analyst
 
-  - English is the most preferred language across all categories.
+**Khurram Naveed** — Data Analyst | Power BI | SQL Server | Excel
 
-  - Chinese (Simplified) and Spanish are also popular in Business and Data Science.
+[![GitHub](https://img.shields.io/badge/GitHub-khurraminsights-181717?style=for-the-badge&logo=github)](https://github.com/khurraminsights)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/khurram-naveed-0083851aa/)
 
-- **Insights:**
+---
 
-  - English is universally preferred, but Chinese (Simplified) and Spanish show strong demand in specific categories.
- 
-- **Recommendation:**
-
-  - Optimize content in English for all categories.
-
-  - For Business and Data Science, consider creating more content in Chinese (Simplified) and Spanish.
- 
-## 6. Impact of Subtitles on Views
-
-![6 line chart](https://github.com/user-attachments/assets/25c8c471-3c83-4f65-92c1-cfb9bded6951)
-
-- **The bar chart shows the relationship between subtitle availability and views:**
-  
-  - Courses with 1-2 subtitles have the highest views.
-
-  - Courses with no subtitles or too many subtitles (e.g., 16+) have lower views.
-
-- **Insights:**
-
-  - Subtitles significantly impact viewer engagement, with 1-2 subtitles being the optimal range.
-
-  - Too many subtitles may overwhelm learners, while no subtitles limit accessibility.
-
-- **Recommendation:**
-
-   - Ensure all courses have 1-2 subtitles to maximize engagement.
-
-   - Avoid excessive subtitles, as they may reduce viewership.
-
- ## 7. Top Instructors by Category and Sub-Category
-
- ![7 table](https://github.com/user-attachments/assets/b21cffa5-26c2-4476-9a57-5403650be703)
-
-   - **The table lists instructors with high ratings (e.g., 4.9) across categories.**
-
-     - Top instructors include Daniel, Dr. Abas, and Prof. Richa.
-
-  - **Insights:**
-
-     - High-rated instructors consistently deliver quality content and engage learners effectively.
-   
-   - **Recommendation:**
-
-     - Collaborate with top instructors like Daniel and Dr. Abas to create new content.
-
-     - Highlight these instructors in marketing campaigns to attract more learners.
-
- ## 8. Relationship Between Course Duration and Views
-
-![9 kinechart](https://github.com/user-attachments/assets/64bfb907-9402-4069-95ad-8796f050b104)
-
- - **The line chart shows the relationship between course duration (in hours) and views:**
-
-     - Courses with 200-400 hours of content have the highest views.
-
-     - Shorter courses (<200 hours) and longer courses (>600 hours) have lower views.
-       
-  - **Insights:**
-
-     -  Learners prefer courses with moderate duration (200-400 hours), balancing depth and time commitment.
-
-     -  Very short or very long courses are less engaging.
-       
-  - **Recommendation:**  
-
-     -  Design courses with 200-400 hours of content for maximum engagement.
-
-     -  Avoid extremely short or long courses unless targeting niche audiences.
-
-## Summary of Recommendations
-1. Focus on Courses in high-demand categories like Business and Data Science.
-2. Prioritize English content but expand into Chinese (Simplified) and Spanish for growth.
-3. Enhance Marketing and Finance courses with more skills to align with job market demands.
-4. Ensure courses have 1-2 subtitles to maximize engagement.
-5. Collaborate with top-rated instructors like Daniel and Dr. Abas.
-6. Design courses with 200-400 hours of content for optimal engagement.
-7. Increase skill variety in courses to boost viewership.
-  
+<div align="center"><strong>Better questions. Clearer analysis. More useful learning insights.</strong></div>
 
